@@ -78,9 +78,11 @@ The base element of the path to where checked out or updated files are placed.
 
 Each entry in ```map``` utilises the ```path``` and ```respository``` options to determine the full path and URL of the items being considered. So, in this case, the first entry would resolve to:
 
-```/svn/projectX/src/folderX```
+	/svn/projectX/src/folderX
+
 and
-```https://my_repos.com/projectX/trunk/SVNFolderX```
+
+	https://my_repos.com/projectX/trunk/SVNFolderX
 
 Note the inclusion of slashes on the option entries. The plugin makes no effort to ensure slashes are correct.
 
