@@ -44,13 +44,13 @@ module.exports = function (grunt) {
 
 			function processPath(path) {
 				var command = options.bin;
-				path = options.path + path;
-				if (grunt.file.exists(path + '/.svn')) {
-					command = [ command, 'update', path ].join(' ');
+				var fullPath = options.path + path;
+				if (grunt.file.exists(fullPath + '/.svn')) {
+					command = [ command, 'update', fullPath ].join(' ');
 				} else {
-					command = [ command, 'checkout', options.repository + map[path], path ].join(' ');
+					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
-				grunt.log.write('\nProcessing ' + path);
+				grunt.log.write('\nProcessing ' + fullPath);
 				exec(command, function (error, stdout) {
 					grunt.log.write(stdout);
 					if (error !== null) {
