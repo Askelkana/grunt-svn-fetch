@@ -1,7 +1,7 @@
 {
   "name": "grunt-svn-fetch",
   "description": "Ensures specified files are checked out or updated from SVN repository.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/askelkana/svn-fetch",
   "author": {
     "name": "askelkana",
