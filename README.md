@@ -89,3 +89,4 @@ Note the inclusion of slashes on the option entries. The plugin makes no effort 
 ## Release History
 * 2013-03-13 0.1.0 Initial release
 * 2013-07-12 0.1.2 Issue #1 fixed
+
