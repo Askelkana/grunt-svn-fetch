@@ -47,7 +47,7 @@ Type: 'Object'
 
 Default value: `{}`
 
-Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger files.
+Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger repositories.
 
 #### options.repository
 Type: `String`
