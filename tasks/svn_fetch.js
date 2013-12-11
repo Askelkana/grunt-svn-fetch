@@ -16,9 +16,10 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('svn_fetch', 'Updates or checks out the desired files', function () {
 		var exec = require('child_process').exec;
 		var options = this.options({
-			bin:        'svn',
-			repository: '',
-			path:       ''
+			bin:         'svn',
+			repository:  '',
+			path:        '',
+			execOptions: {}
 		});
 		var done = this.async();
 		var map = this.data.map;
@@ -51,7 +52,7 @@ module.exports = function (grunt) {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
 				grunt.log.write('\nProcessing ' + fullPath);
-				exec(command, function (error, stdout) {
+				exec(command, options.execOptions, function (error, stdout) {
 					grunt.log.write(stdout);
 					if (error !== null) {
 						grunt.log.error('\n#' + command + "\n" + error);

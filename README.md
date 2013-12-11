@@ -42,6 +42,12 @@ Default value: `'svn'`
 
 Specifies the location of the SVN binary.
 
+#### options.execOptions
+Type: 'Object'
+
+Default value: `{}`
+
+Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger files.
 
 #### options.repository
 Type: `String`
@@ -50,14 +56,12 @@ Default value: `''`
 
 The URL of the SVN repository.
 
-
 #### options.path
 Type: `String`
 
 Default value: `''`
 
 The base element of the path to where checked out or updated files are placed.
-
 
 ### Usage Examples
 
@@ -89,3 +93,4 @@ Note the inclusion of slashes on the option entries. The plugin makes no effort 
 ## Release History
 * 2013-03-13 0.1.0 Initial release
 * 2013-03-13 0.1.2 Issue #1 fixed
+* 2013-12-11 0.1.3 Issue #2 fixed
