@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 				} else {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
-				grunt.log.write('\nProcessing ' + fullPath);
+				grunt.log.write('Processing ' + fullPath + '\n');
 				exec(command, options.execOptions, function (error, stdout) {
 					grunt.log.write(stdout);
 					if (error !== null) {
