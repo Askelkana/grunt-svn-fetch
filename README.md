@@ -45,10 +45,12 @@ Specifies the location of the SVN binary.
 #### options.execOptions
 Type: 'Object'
 
+#### options.execOptions
+Type: 'Object'
+
 Default value: `{}`
 
-#### options.svnOptions
-Type: 'Object'
+Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger repositories.
 
 Default value: `{}`
 
