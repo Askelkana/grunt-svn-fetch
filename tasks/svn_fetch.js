@@ -19,7 +19,8 @@ module.exports = function (grunt) {
 			bin:         'svn',
 			repository:  '',
 			path:        '',
-			execOptions: {}
+			execOptions: {},
+			svnOptions: {}
 		});
 		var done = this.async();
 		var map = this.data.map;
@@ -50,6 +51,9 @@ module.exports = function (grunt) {
 					command = [ command, 'update', fullPath ].join(' ');
 				} else {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
+				}
+				for (var key in options.svnOptions) {
+					command += ' --' + key + "='" + options.svnOptions[key] +"'"
 				}
 				grunt.log.write('Processing ' + fullPath + '\n');
 				exec(command, options.execOptions, function (error, stdout) {

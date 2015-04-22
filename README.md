@@ -49,6 +49,17 @@ Default value: `{}`
 
 Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger repositories.
 
+Default value: `{}`
+
+Specifies any options to pass to the `svn` command. For example you can specify your credentials as follows:
+
+```js
+svnOptions: {
+	username: 'paul',
+	password: 'paulpasswd'
+}
+```
+
 #### options.repository
 Type: `String`
 
