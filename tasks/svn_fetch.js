@@ -13,6 +13,9 @@ module.exports = function (grunt) {
 	// Please see the Grunt documentation for more information regarding task
 	// creation: http://gruntjs.com/creating-tasks
 
+	// Flag to check if windows os
+	var isWindowsOs = /windows/.test( (require('os').type()).toLowerCase() );
+
 	grunt.registerMultiTask('svn_fetch', 'Updates or checks out the desired files', function () {
 		var exec = require('child_process').exec;
 		var options = this.options({
@@ -53,7 +56,12 @@ module.exports = function (grunt) {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
 				for (var key in options.svnOptions) {
-					command += ' --' + key + "='" + options.svnOptions[key] +"'"
+					// As in windows os, arguments are passed differently
+					if (isWindowsOs){
+						command += ' --' + key + " " + options.svnOptions[key] +" "
+					}else{
+						command += ' --' + key + "='" + options.svnOptions[key] +"'"
+					}
 				}
 				grunt.log.write('Processing ' + fullPath + '\n');
 				exec(command, options.execOptions, function (error, stdout) {
